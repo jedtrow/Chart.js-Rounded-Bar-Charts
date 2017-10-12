@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Chart.js Rounded Bar Charts Demo</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.min.js"></script>
+        <script src="../Chart.roundedBarCharts.min.js"></script>
+    </head>
+    <body onload="onLoad()">
+        <div class="container">
+        	<canvas
+        		id="bar_chart"
+        	></canvas>
+        </div>
+        <div class="container">
+        	<canvas
+        		id="horizontal_bar_chart"
+        	></canvas>
+        </div>
+        <script>
+            var data = {
+            	labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+                    datasets: [{
+                        label: '% change in support',
+                        data: [12, -19, -3, 5, 2, 3],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+            			borderWidth: 0
+                    }]
+            	};
+            var options = {
+                cornerRadius: 20,
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero:true
+                        }
+                    }]
+                }
+            };
+
+            function onLoad(){
+                // Standard Bar Chart
+                var ctxBar = document.getElementById("bar_chart");
+                var myBarChart = new Chart(ctxBar, {
+                    type: 'bar',
+                    data: data,
+                    options: options
+                });
+
+                // Horizontal Bar Chart
+                var ctxHBar = document.getElementById("horizontal_bar_chart");
+                var myHorizBarChart = new Chart(ctxHBar, {
+                    type: 'horizontalBar',
+                    data: data,
+                    options: options
+                });
+            }
+        </script>
+    </body>
+</html>
