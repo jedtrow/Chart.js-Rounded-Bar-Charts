@@ -10,9 +10,10 @@ Chart.elements.Rectangle.prototype.draw = function() {
     var borderWidth = vm.borderWidth;
 
     // If radius is less than 0 or is large enough to cause drawing errors a max
-    //      radius is imposed
+    //      radius is imposed. If cornerRadius is not defined set it to 0.
     var cornerRadius = this._chart.config.options.cornerRadius;
     if(cornerRadius < 0){ cornerRadius = 0; }
+    if(typeof cornerRadius == 'undefined'){ cornerRadius = 0; }
 
     if (!vm.horizontal) {
         // bar
