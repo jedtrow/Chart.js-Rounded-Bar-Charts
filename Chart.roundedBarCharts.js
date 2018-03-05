@@ -88,6 +88,8 @@ Chart.elements.Rectangle.prototype.draw = function() {
     // Draw rectangle from 'startCorner'
     var corner = cornerAt(0);
     ctx.moveTo(corner[0], corner[1]);
+    
+    var nextCornerId, nextCorner, width, height, x, y;
 
     for (var i = 1; i < 4; i++) {
         corner = cornerAt(i);
@@ -111,6 +113,8 @@ Chart.elements.Rectangle.prototype.draw = function() {
         if(radius > Math.abs(width)/2){
             radius = Math.floor(Math.abs(width)/2);
         }
+        
+        var x_tl, x_tr, y_tl, y_tr, x_bl, x_br, y_bl, y_br;
 
         if(height < 0){
             // Negative values in a standard bar chart
