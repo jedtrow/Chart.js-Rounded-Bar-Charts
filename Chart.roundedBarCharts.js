@@ -18,7 +18,7 @@ Chart.elements.Rectangle.prototype.draw = function() {
 
     if(cornerRadius < 0){ cornerRadius = 0; }
     if(typeof cornerRadius == 'undefined'){ cornerRadius = 0; }
-    if(typeof fullCornerRadius == 'undefined'){ fullCornerRadius = false; }
+    if(typeof fullCornerRadius == 'undefined'){ fullCornerRadius = true; }
 
     if (!vm.horizontal) {
         // bar

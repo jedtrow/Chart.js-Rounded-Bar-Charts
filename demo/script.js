@@ -18,6 +18,7 @@ var data = {
 
 var options = {
   cornerRadius: 20,
+  fullCornerRadius: false,
   scales: {
     yAxes: [{
       ticks: {
@@ -29,7 +30,6 @@ var options = {
 
 var fullCornerRadiusOptions = {
   cornerRadius: 20,
-  fullCornerRadius: true,
   scales: {
     yAxes: [{
       ticks: {

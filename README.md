@@ -13,7 +13,7 @@ Then set the radius in the options e.g.
 ```javascript
 var options = {
     cornerRadius: number,
-    fullCornerRadius: boolean,
+    fullCornerRadius: boolean, (default is true)
 };
 ```
 
