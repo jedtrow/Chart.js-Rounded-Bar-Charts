@@ -1,7 +1,7 @@
 /*
 *   Rounded Rectangle Extension for Bar Charts and Horizontal Bar Charts
 *   Tested with Charts.js 2.7.0
-*   Mod by anthony0030
+*   Modified by anthony0030
 */
 Chart.elements.Rectangle.prototype.draw = function() {
 
