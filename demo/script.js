@@ -15,7 +15,6 @@ var data = {
   }]
 };
 
-
 var options = {
   cornerRadius: 20,
   fullCornerRadius: false,
@@ -39,9 +38,8 @@ var fullCornerRadiusOptions = {
   }
 };
 
-
 function onLoad() {
-  
+
   // Standard Bar Chart
   var ctxBar = document.getElementById("bar_chart");
   var myBarChart = new Chart(ctxBar, {
