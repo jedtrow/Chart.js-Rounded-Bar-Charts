@@ -109,7 +109,7 @@ Chart.elements.Rectangle.prototype.draw = function() {
         x = corners[1][0];
         y = corners[1][1];
 
-        var radius = cornerRadius;
+        radius = cornerRadius;
         // Fix radius being too large
         if(radius > Math.abs(height)/2){
             radius = Math.floor(Math.abs(height)/2);
