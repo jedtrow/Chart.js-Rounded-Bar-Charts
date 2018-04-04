@@ -12,6 +12,10 @@ To use include the following:
 Then set the radius in the options e.g.
 ```javascript
 var options = {
-    cornerRadius: 20,
+    cornerRadius: number,
+    fullCornerRadius: boolean, (default is true)
 };
 ```
+
+"cornerRadius" option will define how much of a curve you whant your bars to have.
+"fullCornerRadius" option will make all the corners in the chart round and is a boolean; true or false.
