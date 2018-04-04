@@ -17,8 +17,8 @@ Chart.elements.Rectangle.prototype.draw = function() {
     var typeOfChart = this._chart.config.type;
 
     if(cornerRadius < 0){ cornerRadius = 0; }
-    if(typeof cornerRadius == "undefined"){ cornerRadius = 0; }
-    if(typeof fullCornerRadius == "undefined"){ fullCornerRadius = true; }
+    if(typeof cornerRadius === "undefined"){ cornerRadius = 0; }
+    if(typeof fullCornerRadius === "undefined"){ fullCornerRadius = true; }
 
     if (!vm.horizontal) {
         // bar
@@ -98,8 +98,8 @@ Chart.elements.Rectangle.prototype.draw = function() {
     for (var i = 1; i < 4; i++) {
         corner = cornerAt(i);
         nextCornerId = i+1;
-        if(nextCornerId == 4){
-            nextCornerId = 0
+        if(nextCornerId === 4){
+            nextCornerId = 0;
         }
 
         nextCorner = cornerAt(nextCornerId);
@@ -199,28 +199,34 @@ Chart.elements.Rectangle.prototype.draw = function() {
             ctx.lineTo(x + width, y + height - radius);
 
             // bottom right
-            if(fullCornerRadius || typeOfChart == "horizontalBar")
+            if(fullCornerRadius || typeOfChart === "horizontalBar"){
               ctx.quadraticCurveTo(x + width, y + height, x + width - radius, y + height);
-            else
+            }
+            else{
               ctx.lineTo(x + width, y + height, x + width - radius, y + height);
+            }
 
 
             ctx.lineTo(x + radius, y + height);
 
             // bottom left
-            if(fullCornerRadius)
+            if(fullCornerRadius){
               ctx.quadraticCurveTo(x, y + height, x, y + height - radius);
-            else
+            }
+            else{
               ctx.lineTo(x, y + height, x, y + height - radius);
+            }
 
 
             ctx.lineTo(x, y + radius);
 
             // top left
-            if(fullCornerRadius || typeOfChart == "bar")
+            if(fullCornerRadius || typeOfChart === "bar"){
               ctx.quadraticCurveTo(x, y, x + radius, y);
-            else
+            }
+            else{
               ctx.lineTo(x, y, x + radius, y);
+            }
         }
     }
 
